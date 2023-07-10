@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .bg-image {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+    }
+    .female-character {
+      position: absolute;
+      top: 28%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .headline1 {
+      position: absolute;
+      top: 50%;
+      left: -100%;
+      transform: translateY(-50%);
+      transition: left 1s ease-in-out;
+    }
+    .headline2 {
+      position: absolute;
+      top: -220px;
+      right: -100%;
+      transition: right 1s ease-in-out;
+    }
+    .subheadline {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-42%, -48%);
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .learn-more-btn {
+      position:absolute;
+      bottom: 164px;
+      left:50%;
+      transform:translateX(-50%);
+      opacity:0;
+      transition:opacity 1s ease-in-out;
+    }
+    .logo {
+        position:absolute;
+        top:0;
+        left: -100%;
+        width: 400px;
+        transition:left 1s ease-in-out
+    }
+    .replay-btn{
+        position:absolute;
+        bottom: 74px;
+        right: 785px; 
+        opacity: 0;
+        transition: opacity 1s ease-in-out
+    }
+    
+  </style>
+</head>
+<body>
+<div class="container">
+<img class="bg-image" src="/img/background.png">
+<img class="female-character" src="/img/female.png">
+<img class="headline1" src="/img/headline1.png" />
+<img class="headline2" src="/img/headline2.png" />
+<img class="subheadline" src="/img/subheadline.png">Subheadline</img>
+<button class="learn-more-btn"><img src="/img/learnmore.png" /><a href="#"></a></button>
+<img class="logo" src="/img/logo.png">
+<Replay class="replay-btn"><img src="/img/replay.png" /></button>
+</div>
+
+<script>
+function startAnimation() {
+const femaleCharacter = document.querySelector('.female-character');
+const headline1 = document.querySelector('.headline1');
+const headline2 = document.querySelector('.headline2');
+const subheadline = document.querySelector('.subheadline');
+const learnMoreBtn = document.querySelector('.learn-more-btn');
+const logo = document.querySelector('.logo');
+const replayBtn = document.querySelector('.replay-btn');
+
+setTimeout(() => { femaleCharacter.style.opacity = '1'; },1000);
+setTimeout(() => { headline1.style.left = '20%'; },2000);
+setTimeout(() => { femaleCharacter.style.opacity = '0'; },3000);
+setTimeout(() => { headline1.style.left = '150%'; },4000);
+setTimeout(() => { headline2.style.right = '219px'; },5000);
+setTimeout(() => { subheadline.style.opacity = '1'; },6000);
+setTimeout(() => { learnMoreBtn.style.opacity = '1'; },7000);
+setTimeout(() => { logo.style.left = '1238px'; },8000);
+setTimeout(() => { replayBtn.style.opacity = '1'; },9000);
+}
+
+startAnimation();
+
+document.querySelector('.replay-btn').addEventListener('click', () => {
+location.reload();
+});
+</script>
+
+</body>
+</html>
